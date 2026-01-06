@@ -14,6 +14,9 @@ for bit in data:
         nrz_sig.extend([-1] * bits_per_sample)
 
 nrz_sig = np.array(nrz_sig)
-
-
 #print(nrz_sig , nrz_sig.dtype)
+
+t = np.arange(len(nrz_sig)) / fs
+carrier_signal = np.sin(2 * np.pi * fc * t)
+
+
